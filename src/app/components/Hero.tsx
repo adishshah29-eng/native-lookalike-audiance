@@ -23,7 +23,7 @@ export function Hero() {
           className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 border border-white/20"
         >
           <span className="text-white text-xs md:text-sm font-medium tracking-wide">
-            World's #1 Luxury Assets for Businesses
+            World's #1 Luxury Asset for Businesses
           </span>
         </motion.div>
 
@@ -41,7 +41,7 @@ export function Hero() {
           }}
         >
           Stop{" "}
-          <span style={{ color: "#FF2222" }}>burning money</span>
+          <span style={{ color: "#FF2222" }} className="whitespace-nowrap">burning money</span>
           <br />
           On The Wrong Audience.
         </motion.h1>
