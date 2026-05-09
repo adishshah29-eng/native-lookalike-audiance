@@ -23,9 +23,6 @@ export const AuroraBackground = ({
         style={{ minHeight: "100vh" }}
         {...props}
       >
-        {/* No blobs, no aurora — pure black */}
-        {children}
-
         {/* Tall, smooth blend into white — must cover at least 280px */}
         <div
           className="absolute bottom-0 left-0 right-0 pointer-events-none"
@@ -34,6 +31,9 @@ export const AuroraBackground = ({
             background: "linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.15) 30%, rgba(255,255,255,0.6) 60%, #ffffff 100%)",
           }}
         />
+
+        {/* Children placed after so they stack cleanly over the gradient */}
+        {children}
       </div>
     </main>
   );

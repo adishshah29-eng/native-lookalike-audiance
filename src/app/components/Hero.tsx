@@ -35,13 +35,14 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="font-black text-white text-center leading-none"
           style={{
-            fontSize: "clamp(3rem, 8vw, 7rem)",
+            fontSize: "clamp(2rem, 8vw, 7rem)",
             lineHeight: 1.05,
             letterSpacing: "-0.02em",
           }}
         >
-          Stop{" "}
-          <span style={{ color: "#FF2222" }} className="whitespace-nowrap">burning money</span>
+          <span className="whitespace-nowrap">
+            Stop <span style={{ color: "#FF2222" }}>burning money</span>
+          </span>
           <br />
           On The Wrong Audience.
         </motion.h1>
