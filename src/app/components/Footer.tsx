@@ -1,5 +1,6 @@
 import { Instagram, Linkedin, Twitter } from 'lucide-react';
 import { motion } from 'motion/react';
+import { CONTACT } from '../config';
 
 export function Footer() {
   return (
@@ -45,9 +46,42 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-[#111111] mb-4 text-sm">Support</h3>
             <ul className="space-y-2">
-              <li><a href="#" aria-label="Coming soon" className="text-sm text-[#666666] hover:text-[#111111]">Help Center</a></li>
-              <li><a href="#" aria-label="Coming soon" className="text-sm text-[#666666] hover:text-[#111111]">Terms</a></li>
-              <li><a href="#" aria-label="Coming soon" className="text-sm text-[#666666] hover:text-[#111111]">Privacy</a></li>
+              <li>
+                <a 
+                  href="#contact" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="text-sm text-[#666666] hover:text-[#111111]"
+                >
+                  Help Center
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#contact" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="text-sm text-[#666666] hover:text-[#111111]"
+                >
+                  Terms
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#contact" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="text-sm text-[#666666] hover:text-[#111111]"
+                >
+                  Privacy
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -57,13 +91,13 @@ export function Footer() {
           <p className="text-xs text-[#444444] tracking-[2px] font-semibold">LUXURY LOOK-ALIKES</p>
 
           <div className="flex items-center gap-4">
-            <a href="#" className="text-[#444444] hover:text-[#111111] transition-colors">
+            <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" className="text-[#444444] hover:text-[#111111] transition-colors">
               <Instagram className="w-5 h-5" />
             </a>
-            <a href="#" className="text-[#444444] hover:text-[#111111] transition-colors">
+            <a href={CONTACT.linkedin} target="_blank" rel="noopener noreferrer" className="text-[#444444] hover:text-[#111111] transition-colors">
               <Linkedin className="w-5 h-5" />
             </a>
-            <a href="#" className="text-[#444444] hover:text-[#111111] transition-colors">
+            <a href={CONTACT.twitter} target="_blank" rel="noopener noreferrer" className="text-[#444444] hover:text-[#111111] transition-colors">
               <Twitter className="w-5 h-5" />
             </a>
           </div>

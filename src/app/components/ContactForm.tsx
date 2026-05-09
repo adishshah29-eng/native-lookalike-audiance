@@ -1,16 +1,25 @@
 import { MessageCircle, Phone } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useState } from 'react';
+import { CONTACT } from '../config';
 
 export function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
+  const [errors, setErrors] = useState({ name: false, email: false, message: false });
 
   const handleSubmit = async () => {
-    if (!formData.name || !formData.email || !formData.message) return;
+    const newErrors = {
+      name: !formData.name.trim(),
+      email: !formData.email.trim(),
+      message: !formData.message.trim(),
+    };
+    setErrors(newErrors);
+    if (Object.values(newErrors).some(Boolean)) return;
+
     setStatus('sending');
     try {
-      const response = await fetch('https://formsubmit.co/ajax/PLACEHOLDER', {
+      const response = await fetch(`https://formsubmit.co/ajax/${CONTACT.email}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -49,7 +58,9 @@ export function ContactForm() {
 
             <div className="space-y-4">
               <a
-                href="https://wa.me/"
+                href={`https://wa.me/${CONTACT.whatsapp}?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20strategy%20call`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-3 p-4 bg-[#F7F7F7] rounded-xl hover:bg-[#EBEBEB] transition-colors"
               >
                 <div className="w-12 h-12 bg-[#25D366] rounded-full flex items-center justify-center">
@@ -62,7 +73,7 @@ export function ContactForm() {
               </a>
 
               <a
-                href="tel:+1234567890"
+                href={`tel:${CONTACT.phone}`}
                 className="flex items-center gap-3 p-4 bg-[#F7F7F7] rounded-xl hover:bg-[#EBEBEB] transition-colors"
               >
                 <div className="w-12 h-12 bg-[#111111] rounded-full flex items-center justify-center">
@@ -70,7 +81,7 @@ export function ContactForm() {
                 </div>
                 <div>
                   <p className="font-semibold text-[#111111]">Call Us</p>
-                  <p className="text-sm text-[#666666]">+91 (XXX) XXX-XXXX</p>
+                  <p className="text-sm text-[#666666]">{CONTACT.phoneDisplay}</p>
                 </div>
               </a>
             </div>
@@ -108,6 +119,7 @@ export function ContactForm() {
                     className="w-full px-4 py-3.5 bg-[#F7F7F7] border border-[#E0E0E0] rounded-[10px] text-[#111111] focus:border-[#111111] focus:outline-none transition-colors"
                     placeholder="Your name"
                   />
+                  {errors.name && <p className="text-red-500 text-xs mt-1">Name is required</p>}
                 </div>
 
                 <div>
@@ -122,6 +134,21 @@ export function ContactForm() {
                     required
                     className="w-full px-4 py-3.5 bg-[#F7F7F7] border border-[#E0E0E0] rounded-[10px] text-[#111111] focus:border-[#111111] focus:outline-none transition-colors"
                     placeholder="you@company.com"
+                  />
+                  {errors.email && <p className="text-red-500 text-xs mt-1">Email is required</p>}
+                </div>
+
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-semibold text-[#111111] mb-2">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className="w-full px-4 py-3.5 bg-[#F7F7F7] border border-[#E0E0E0] rounded-[10px] text-[#111111] focus:border-[#111111] focus:outline-none transition-colors"
+                    placeholder="+91 XXXXX XXXXX"
                   />
                 </div>
 
@@ -138,6 +165,7 @@ export function ContactForm() {
                     className="w-full px-4 py-3.5 bg-[#F7F7F7] border border-[#E0E0E0] rounded-[10px] text-[#111111] focus:border-[#111111] focus:outline-none transition-colors resize-none"
                     placeholder="Tell us about your business and current ad spend..."
                   ></textarea>
+                  {errors.message && <p className="text-red-500 text-xs mt-1">Message is required</p>}
                 </div>
 
                 <button

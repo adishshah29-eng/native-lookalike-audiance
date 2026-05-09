@@ -1,6 +1,7 @@
 import { Menu, MessageCircle } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { CONTACT } from '../config';
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,7 +23,13 @@ export function Navbar() {
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <a href="https://wa.me/" className="text-[#25D366]" aria-label="WhatsApp">
+            <a 
+              href={`https://wa.me/${CONTACT.whatsapp}?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Luxury%20Look-Alikes`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#25D366]" 
+              aria-label="WhatsApp"
+            >
               <MessageCircle className="w-5 h-5" />
             </a>
             <button

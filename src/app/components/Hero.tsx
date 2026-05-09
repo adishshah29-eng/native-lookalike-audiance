@@ -65,6 +65,9 @@ export function Hero() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.8 }}
+          onClick={() => {
+            document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+          }}
           className="w-full sm:w-auto bg-white text-black font-semibold text-sm md:text-base px-10 py-4 rounded-full tracking-wide hover:bg-gray-100 transition-all duration-200 mt-2"
         >
           Acquire Your Look-Alikes

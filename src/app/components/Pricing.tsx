@@ -1,5 +1,6 @@
 import { Check } from 'lucide-react';
 import { motion } from 'motion/react';
+import { CONTACT } from '../config';
 
 export function Pricing() {
   const founderPlans = [
@@ -123,6 +124,12 @@ export function Pricing() {
       </ul>
 
       <button
+        onClick={() => {
+          const msg = encodeURIComponent(
+            `Hi, I'm interested in the ${plan.name} (${plan.price}). Please share more details.`
+          );
+          window.open(`https://wa.me/${CONTACT.whatsapp}?text=${msg}`, '_blank');
+        }}
         className={`w-full py-3 px-6 rounded-full font-semibold text-sm transition-colors ${
           plan.highlighted
             ? 'bg-[#111111] text-white hover:bg-black'
