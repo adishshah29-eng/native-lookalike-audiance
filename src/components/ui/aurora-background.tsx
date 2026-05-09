@@ -23,12 +23,20 @@ export const AuroraBackground = ({
         style={{ minHeight: "110vh" }}
         {...props}
       >
-        {/* Tall, smooth blend into white — must cover at least 280px */}
+        {/* Premium dark gradient background */}
+        <div 
+          className="absolute inset-0 pointer-events-none overflow-hidden"
+          style={{
+            background: "radial-gradient(circle at 50% 0%, rgba(255,255,255,0.08) 0%, transparent 60%), radial-gradient(circle at 80% 40%, rgba(255,34,34,0.05) 0%, transparent 50%)"
+          }}
+        />
+
+        {/* Tall, smooth blend into white — must cover at least 350px */}
         <div
           className="absolute bottom-0 left-0 right-0 pointer-events-none"
           style={{
-            height: "180px",
-            background: "linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.2) 40%, rgba(255,255,255,0.7) 70%, #ffffff 100%)",
+            height: "350px",
+            background: "linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.05) 20%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.8) 80%, #ffffff 100%)",
           }}
         />
 
