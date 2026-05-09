@@ -13,7 +13,7 @@ export function Hero() {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="relative flex flex-col gap-4 items-center justify-center px-4"
+        className="relative flex flex-col gap-6 items-center justify-center px-6"
       >
         {/* Badge */}
         <motion.div
@@ -21,12 +21,9 @@ export function Hero() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 bg-white/10 border border-white/20"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20"
         >
-          <span className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-white text-xs font-bold">
-            LL
-          </span>
-          <span className="text-white text-sm">South Mumbai Launch — Limited Access</span>
+          <span className="text-white text-xs md:text-sm">World's #1 Luxury Assets for Businesses</span>
         </motion.div>
 
         {/* Heading */}
@@ -35,9 +32,9 @@ export function Hero() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-3xl md:text-7xl font-bold text-white dark:text-white text-center mb-4"
+          className="text-4xl md:text-7xl lg:text-8xl font-black text-white text-center"
         >
-          Stop Burning Money
+          Stop <span style={{ color: '#FF2222' }}>burning money</span>
           <br />
           On The Wrong Audience.
         </motion.h1>
@@ -48,7 +45,7 @@ export function Hero() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="font-light text-white/70 text-base md:text-4xl dark:text-neutral-200 py-4 max-w-2xl mx-auto"
+          className="font-light text-white/70 text-sm md:text-xl lg:text-2xl max-w-xl mx-auto text-center"
         >
           The internet is flooded with fake targeting. Broad audiences. Junk leads. Dead spends. We already found your customers.
         </motion.p>
@@ -59,7 +56,7 @@ export function Hero() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="bg-black dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2 mb-12"
+          className="mt-4 w-full sm:w-auto px-8 py-4 text-base md:text-lg bg-white text-black hover:bg-gray-100 font-semibold tracking-wide rounded-full transition-all duration-200 mb-12"
         >
           Acquire Your Look-Alikes
         </motion.button>
