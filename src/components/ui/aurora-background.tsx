@@ -20,15 +20,15 @@ export const AuroraBackground = ({
           "relative flex flex-col items-center justify-center bg-black text-white transition-bg",
           className
         )}
-        style={{ minHeight: "100vh" }}
+        style={{ minHeight: "110vh" }}
         {...props}
       >
         {/* Tall, smooth blend into white — must cover at least 280px */}
         <div
           className="absolute bottom-0 left-0 right-0 pointer-events-none"
           style={{
-            height: "280px",
-            background: "linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.15) 30%, rgba(255,255,255,0.6) 60%, #ffffff 100%)",
+            height: "180px",
+            background: "linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.2) 40%, rgba(255,255,255,0.7) 70%, #ffffff 100%)",
           }}
         />
 
