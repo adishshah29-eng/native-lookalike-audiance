@@ -12,7 +12,7 @@ export function Hero() {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="relative flex flex-col gap-6 items-center justify-center px-6 text-center pb-24 pt-32"
+        className="relative flex flex-col gap-6 items-center justify-center px-6 text-center py-12"
       >
         {/* Badge — no LL icon */}
         <motion.div
