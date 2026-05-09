@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 export function Stats() {
   const stats = [
     { number: '₹100Cr+', label: 'AD SPEND TRAINED ON' },
-    { number: '10M+', label: 'AUDIENCE DATAPOINTS' },
+    { number: '10B+', label: 'AUDIENCE DATAPOINTS' },
     { number: '100%', label: 'PERFORMANCE COMMITMENT' },
   ];
 
