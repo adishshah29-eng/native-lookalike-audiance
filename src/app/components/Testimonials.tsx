@@ -56,9 +56,14 @@ export function Testimonials() {
               <p className="text-[15px] text-[#555555] leading-relaxed mb-4">
                 "{testimonial.quote}"
               </p>
-              <div>
-                <p className="font-semibold text-[#111111] text-sm">{testimonial.name}</p>
-                <p className="text-xs text-[#888888]">{testimonial.role}</p>
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-9 h-9 rounded-full bg-[#F5A623]/15 flex items-center justify-center text-[#F5A623] text-sm font-bold flex-shrink-0">
+                  {testimonial.name.split(' ').map((n: string) => n[0]).join('')}
+                </div>
+                <div>
+                  <p className="font-semibold text-[#111111] text-sm">{testimonial.name}</p>
+                  <p className="text-xs text-[#888888]">{testimonial.role}</p>
+                </div>
               </div>
             </motion.div>
           ))}

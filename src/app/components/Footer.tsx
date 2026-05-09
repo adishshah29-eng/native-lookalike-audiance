@@ -27,9 +27,9 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-[#111111] mb-4 text-sm">Services</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-[#666666] hover:text-[#111111]">Audience Intelligence</a></li>
-              <li><a href="#" className="text-sm text-[#666666] hover:text-[#111111]">Lookalike Precision</a></li>
-              <li><a href="#" className="text-sm text-[#666666] hover:text-[#111111]">Performance Training</a></li>
+              <li><a href="#how-it-works" className="text-sm text-[#666666] hover:text-[#111111]">Audience Intelligence</a></li>
+              <li><a href="#how-it-works" className="text-sm text-[#666666] hover:text-[#111111]">Lookalike Precision</a></li>
+              <li><a href="#how-it-works" className="text-sm text-[#666666] hover:text-[#111111]">Performance Training</a></li>
             </ul>
           </div>
 
@@ -45,9 +45,9 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-[#111111] mb-4 text-sm">Support</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-[#666666] hover:text-[#111111]">Help Center</a></li>
-              <li><a href="#" className="text-sm text-[#666666] hover:text-[#111111]">Terms</a></li>
-              <li><a href="#" className="text-sm text-[#666666] hover:text-[#111111]">Privacy</a></li>
+              <li><a href="#" aria-label="Coming soon" className="text-sm text-[#666666] hover:text-[#111111]">Help Center</a></li>
+              <li><a href="#" aria-label="Coming soon" className="text-sm text-[#666666] hover:text-[#111111]">Terms</a></li>
+              <li><a href="#" aria-label="Coming soon" className="text-sm text-[#666666] hover:text-[#111111]">Privacy</a></li>
             </ul>
           </div>
         </div>

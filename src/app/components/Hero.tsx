@@ -1,4 +1,3 @@
-import { Play } from "lucide-react";
 import { motion } from "framer-motion";
 import { AuroraBackground } from "../../components/ui/aurora-background";
 
@@ -36,7 +35,7 @@ export function Hero() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-3xl md:text-7xl font-bold dark:text-white text-center mb-4"
+          className="text-3xl md:text-7xl font-bold text-white dark:text-white text-center mb-4"
         >
           Stop Burning Money
           <br />
@@ -49,7 +48,7 @@ export function Hero() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4 max-w-2xl mx-auto"
+          className="font-light text-white/70 text-base md:text-4xl dark:text-neutral-200 py-4 max-w-2xl mx-auto"
         >
           The internet is flooded with fake targeting. Broad audiences. Junk leads. Dead spends. We already found your customers.
         </motion.p>

@@ -1,7 +1,33 @@
 import { MessageCircle, Phone } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useState } from 'react';
 
 export function ContactForm() {
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+
+  const handleSubmit = async () => {
+    if (!formData.name || !formData.email || !formData.message) return;
+    setStatus('sending');
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/PLACEHOLDER', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+      if (response.ok) {
+        setStatus('success');
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      setStatus('error');
+    }
+  };
+
   return (
     <section id="contact" className="bg-white py-16 px-6">
       <div className="max-w-6xl mx-auto">
@@ -57,56 +83,74 @@ export function ContactForm() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <form action="https://formsubmit.co/PLACEHOLDER" method="POST" className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-[#111111] mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full px-4 py-3.5 bg-[#F7F7F7] border border-[#E0E0E0] rounded-[10px] text-[#111111] focus:border-[#111111] focus:outline-none transition-colors"
-                  placeholder="Your name"
-                />
+            {status === 'success' ? (
+              <div className="bg-[#25D366]/10 border border-[#25D366]/20 rounded-2xl p-8 text-center h-full flex flex-col justify-center">
+                <h3 className="text-xl font-bold text-[#111111] mb-2">Message sent!</h3>
+                <p className="text-[#555555]">We'll be in touch within 24 hours.</p>
               </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-[#111111] mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full px-4 py-3.5 bg-[#F7F7F7] border border-[#E0E0E0] rounded-[10px] text-[#111111] focus:border-[#111111] focus:outline-none transition-colors"
-                  placeholder="you@company.com"
-                />
+            ) : status === 'error' ? (
+              <div className="bg-red-500/10 border border-red-500/20 rounded-2xl p-8 text-center h-full flex flex-col justify-center">
+                <h3 className="text-xl font-bold text-[#111111] mb-2">Something went wrong.</h3>
+                <p className="text-[#555555]">Please WhatsApp us directly.</p>
               </div>
+            ) : (
+              <div className="space-y-4">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-semibold text-[#111111] mb-2">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    required
+                    className="w-full px-4 py-3.5 bg-[#F7F7F7] border border-[#E0E0E0] rounded-[10px] text-[#111111] focus:border-[#111111] focus:outline-none transition-colors"
+                    placeholder="Your name"
+                  />
+                </div>
 
-              <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-[#111111] mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={4}
-                  className="w-full px-4 py-3.5 bg-[#F7F7F7] border border-[#E0E0E0] rounded-[10px] text-[#111111] focus:border-[#111111] focus:outline-none transition-colors resize-none"
-                  placeholder="Tell us about your business and current ad spend..."
-                ></textarea>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-semibold text-[#111111] mb-2">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    required
+                    className="w-full px-4 py-3.5 bg-[#F7F7F7] border border-[#E0E0E0] rounded-[10px] text-[#111111] focus:border-[#111111] focus:outline-none transition-colors"
+                    placeholder="you@company.com"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-semibold text-[#111111] mb-2">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    required
+                    rows={4}
+                    className="w-full px-4 py-3.5 bg-[#F7F7F7] border border-[#E0E0E0] rounded-[10px] text-[#111111] focus:border-[#111111] focus:outline-none transition-colors resize-none"
+                    placeholder="Tell us about your business and current ad spend..."
+                  ></textarea>
+                </div>
+
+                <button
+                  onClick={handleSubmit}
+                  disabled={status === 'sending'}
+                  className={`w-full text-white py-3.5 px-6 rounded-full font-semibold text-sm transition-colors ${
+                    status === 'sending' ? 'bg-gray-400 cursor-not-allowed' : 'bg-[#111111] hover:bg-black'
+                  }`}
+                >
+                  {status === 'sending' ? 'Sending...' : 'Request Access'}
+                </button>
               </div>
-
-              <button
-                type="submit"
-                className="w-full bg-[#111111] text-white py-3.5 px-6 rounded-full font-semibold text-sm hover:bg-black transition-colors"
-              >
-                Request Access
-              </button>
-            </form>
+            )}
           </motion.div>
         </div>
       </div>

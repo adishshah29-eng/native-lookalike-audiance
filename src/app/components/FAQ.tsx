@@ -60,7 +60,9 @@ export function FAQ() {
               <p className="text-[15px] text-[#555555] mb-4">
                 Can't find your answer?
               </p>
-              <button className="bg-[#111111] text-white py-3 px-6 rounded-full font-semibold text-sm hover:bg-black transition-colors">
+              <button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-[#111111] text-white py-3 px-6 rounded-full font-semibold text-sm hover:bg-black transition-colors">
                 Contact us
               </button>
             </div>

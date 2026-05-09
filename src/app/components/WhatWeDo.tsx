@@ -11,6 +11,24 @@ export function WhatWeDo() {
     { icon: BarChart3, label: 'PERFORMANCE TRAINING' },
   ];
 
+  const tabContent = [
+    {
+      number: "01",
+      title: "We Find Your Exact Customer",
+      body: "Using millions of verified datapoints and historical ad performance across industries, we identify the precise consumer profile that converts for your business category. No guesswork. No broad pools."
+    },
+    {
+      number: "02",
+      title: "Engineered For Conversion",
+      body: "Our lookalike audiences are trained on winning behavior patterns — not your cold pixel data. The result is an audience ecosystem that performs from the first impression, not after months of algorithm learning."
+    },
+    {
+      number: "03",
+      title: "Built On 100s Of Crores",
+      body: "Every audience we deliver has been refined through hundreds of crores in real ad spend data. The patterns that drive conversions are already baked in. You deploy. It works."
+    }
+  ];
+
   return (
     <section id="how-it-works" className="bg-white py-16 px-6">
       <div className="max-w-6xl mx-auto">
@@ -96,7 +114,7 @@ export function WhatWeDo() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.7 }}
-            className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl aspect-video flex items-center justify-center overflow-hidden">
+            className="bg-white border border-[#E8E8E8] rounded-2xl p-8 min-h-[280px] flex items-start gap-8 shadow-[0_2px_12px_rgba(0,0,0,0.05)] overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab}
@@ -104,18 +122,22 @@ export function WhatWeDo() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="text-center text-white p-8"
+                className="flex-1"
               >
-                <div className="w-16 h-16 bg-[#F5A623] rounded-full flex items-center justify-center mx-auto mb-4">
-                  {(() => {
-                    const Icon = tabs[activeTab].icon;
-                    return <Icon className="w-8 h-8 text-white" />;
-                  })()}
+                <div className="text-6xl font-black text-[#F5A623] opacity-20 leading-none">
+                  {tabContent[activeTab].number}
                 </div>
-                <h4 className="text-xl font-bold mb-2">{tabs[activeTab].label}</h4>
-                <p className="text-sm text-white/80">Step {activeTab + 1} of our proven process</p>
+                <h4 className="text-2xl font-bold text-[#111111] mt-2">
+                  {tabContent[activeTab].title}
+                </h4>
+                <p className="text-sm text-[#666666] leading-relaxed mt-3 max-w-lg">
+                  {tabContent[activeTab].body}
+                </p>
               </motion.div>
             </AnimatePresence>
+            <div className="hidden md:flex flex-1 items-center justify-center">
+              <div className="w-48 h-48 rounded-full bg-gradient-to-br from-[#F5A623]/20 to-[#111111]/5 blur-2xl" />
+            </div>
           </motion.div>
         </div>
       </div>
