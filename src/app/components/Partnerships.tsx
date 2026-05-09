@@ -2,11 +2,11 @@ import { motion } from 'motion/react';
 
 export function Partnerships() {
   const partnerships = [
-    { name: 'Sarah Johnson', role: 'Tech Founder', views: '2.4M' },
-    { name: 'Mike Chen', role: 'CEO', views: '1.8M' },
-    { name: 'Emma Davis', role: 'Creator', views: '3.2M' },
-    { name: 'Alex Rivera', role: 'Entrepreneur', views: '1.5M' },
-    { name: 'Lisa Park', role: 'Marketing Lead', views: '2.1M' },
+    { name: 'Real Estate', role: 'Ultra-Luxury Segment', views: '10x' },
+    { name: 'D2C Brands', role: 'High-Ticket Products', views: '8x' },
+    { name: 'Jewellery', role: 'Luxury Retail', views: '12x' },
+    { name: 'Finance DSAs', role: 'Loan & Credit', views: '9x' },
+    { name: 'E-Commerce', role: 'Premium Stores', views: '15x' },
   ];
 
   return (
@@ -17,7 +17,7 @@ export function Partnerships() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-[28px] font-bold text-[#111111] mb-6">Partnerships</motion.h2>
+          className="text-[28px] font-bold text-[#111111] mb-6">Businesses We're Built For</motion.h2>
 
         <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4"
              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>

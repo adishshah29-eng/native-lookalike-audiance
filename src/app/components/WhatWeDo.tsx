@@ -1,4 +1,4 @@
-import { Video, Zap, TrendingUp } from 'lucide-react';
+import { Gauge, Users, BarChart3 } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -6,9 +6,9 @@ export function WhatWeDo() {
   const [activeTab, setActiveTab] = useState(0);
 
   const tabs = [
-    { icon: Video, label: 'CONTENT CREATION' },
-    { icon: Zap, label: 'DISTRIBUTION' },
-    { icon: TrendingUp, label: 'ANALYTICS' },
+    { icon: Gauge, label: 'AUDIENCE INTELLIGENCE' },
+    { icon: Users, label: 'LOOKALIKE PRECISION' },
+    { icon: BarChart3, label: 'PERFORMANCE TRAINING' },
   ];
 
   return (
@@ -21,7 +21,7 @@ export function WhatWeDo() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="text-center text-[40px] font-black tracking-wide text-[#111111] mb-4" style={{ letterSpacing: '1px' }}>
-          WHAT WE DO
+          WHAT WE DELIVER
         </motion.h2>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
@@ -29,7 +29,7 @@ export function WhatWeDo() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-center text-[15px] text-[#555555] leading-relaxed max-w-2xl mx-auto mb-16">
-          We turn your content into viral sensations through performance-based distribution strategies that actually work.
+          Your ads don't fail. Your audience does. Meta doesn't care about your ROAS. Their algorithms are feeding your ads into garbage pools while you keep increasing budgets. That era is over.
         </motion.p>
 
         {/* How Can Clipping Help You */}
@@ -39,7 +39,7 @@ export function WhatWeDo() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-center text-[40px] font-black tracking-wide text-[#111111] mb-4" style={{ letterSpacing: '1px' }}>
-          HOW CAN CLIPPING HELP YOU
+          HOW LUXURY LOOK-ALIKES WORK
         </motion.h2>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
@@ -47,7 +47,7 @@ export function WhatWeDo() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-center text-[15px] text-[#555555] leading-relaxed max-w-2xl mx-auto mb-12">
-          From content strategy to execution, we handle everything so you can focus on what you do best.
+          We deliver hyper-curated, performance-trained, conversion-ready lookalike audiences engineered from real market intelligence, winning ad behavior, and elite consumer patterns.
         </motion.p>
 
         {/* How It Works Section */}
@@ -64,7 +64,7 @@ export function WhatWeDo() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.5 }}
             className="text-[36px] md:text-[48px] font-bold text-[#111111] mb-6" style={{ lineHeight: 1.2 }}>
-            Three Simple Steps
+            Three Intelligence Layers
           </motion.h3>
 
           {/* Tab Pills */}

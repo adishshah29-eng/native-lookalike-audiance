@@ -5,18 +5,18 @@ export function Features() {
   const features = [
     {
       icon: Gauge,
-      title: 'Performance-first',
-      description: 'Every decision is backed by data. We optimize for views, engagement, and conversions.'
+      title: 'Real Ad Intelligence',
+      description: 'Built using 100s of crores in historical ad spends, elite performance datasets, and winning customer behavior patterns across industries.'
     },
     {
       icon: Users,
-      title: 'Founder-led',
-      description: 'Work directly with our team of experts who have built viral campaigns for top brands.'
+      title: 'Precision Audiences',
+      description: 'Not broad targeting. Exact customer ecosystems your business needs to scale — engineered from decades of performance advertising data.'
     },
     {
       icon: BarChart3,
-      title: 'Built for scale',
-      description: 'Our systems are designed to handle campaigns from 100K to 100M+ views.'
+      title: 'Asset, Not Expense',
+      description: 'One right audience outperforms years of testing, random agency strategies, influencer campaigns, and useless boosted posts.'
     },
   ];
 
@@ -28,14 +28,14 @@ export function Features() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-[11px] font-semibold text-[#888888] tracking-[2px] mb-3">CLIPPING CAMPAIGN BASICS</motion.p>
+          className="text-[11px] font-semibold text-[#888888] tracking-[2px] mb-3">BUILT ON REAL DATA</motion.p>
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-[36px] md:text-[48px] font-bold text-[#111111] mb-12" style={{ lineHeight: 1.2 }}>
-          How we think about<br />performance-based distribution.
+          Trained on performance. Not theory.
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

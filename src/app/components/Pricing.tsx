@@ -4,9 +4,9 @@ import { motion } from 'motion/react';
 export function Pricing() {
   const founderPlans = [
     {
-      name: 'Starter Pack',
+      name: 'Precision Pack',
       price: '₹99,999',
-      tag: 'For Startups & Small D2C Businesses',
+      tag: 'For Startups & Growing Businesses',
       features: [
         'Built with 100k+ Datapoints',
         'SMS & WhatsApp Blast Ready',
@@ -17,9 +17,9 @@ export function Pricing() {
       highlighted: false,
     },
     {
-      name: 'Scale Pack',
+      name: 'Authority Pack',
       price: '₹2,99,999',
-      tag: 'Perfect for Retail, D2C & E-commerce',
+      tag: 'For D2C, Retail & E-Commerce',
       features: [
         'Built with 500k+ Datapoints',
         'SMS & WhatsApp Blast Ready',
@@ -31,9 +31,9 @@ export function Pricing() {
       highlighted: true,
     },
     {
-      name: 'Scale Pro',
+      name: 'Domination Pack',
       price: '₹4,99,999',
-      tag: 'Ideal for Aggressive Sales',
+      tag: 'For Aggressive Market Capture',
       features: [
         'Crafted with 1 Million+ Datapoints',
         'SMS & WhatsApp Blast Ready',
@@ -48,9 +48,9 @@ export function Pricing() {
 
   const vipPlans = [
     {
-      name: 'Silver Plan',
+      name: 'Elite Silver',
       price: '₹24.99L',
-      tag: 'For Ultra-Luxury Realtors & Customer-Centric Brands',
+      tag: 'For Luxury Realtors & Premium Brands',
       features: [
         'Up to 3 Million+ Verified Active Datapoints',
         'AI Integrations Ready to Use',
@@ -62,9 +62,9 @@ export function Pricing() {
       highlighted: false,
     },
     {
-      name: 'Gold Plan',
+      name: 'Elite Gold',
       price: '₹49.99L',
-      tag: 'For Businesses with a 6-Month Revenue Goal',
+      tag: 'For 6-Month Revenue Transformation',
       features: [
         'Up to 5 Million+ Verified Active Datapoints',
         'AI Integrations Ready to Use',
@@ -76,9 +76,9 @@ export function Pricing() {
       highlighted: true,
     },
     {
-      name: 'Platinum Plan',
+      name: 'Elite Platinum',
       price: '₹99.99L',
-      tag: 'For High Ticket Sales & Mass Volume Conversions',
+      tag: 'For High-Ticket Sales & Mass Conversions',
       features: [
         'Up to 10 Million+ Verified Active Datapoints',
         'AI Integrations for Infinite Use Cases',
@@ -129,7 +129,7 @@ export function Pricing() {
             : 'bg-white text-[#111111] border border-[#111111] hover:bg-gray-50'
         }`}
       >
-        Get Started
+        Acquire Now
       </button>
     </motion.div>
   );
@@ -156,7 +156,7 @@ export function Pricing() {
           className="text-center text-[36px] md:text-[48px] font-bold text-[#111111] mb-4"
           style={{ lineHeight: 1.2 }}
         >
-          Choose Your Plan
+          South Mumbai Launch Pricing
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 10 }}
@@ -165,7 +165,7 @@ export function Pricing() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-center text-sm text-[#666666] max-w-2xl mx-auto mb-16 leading-relaxed"
         >
-          Any Business Founder or Company can run multiple digital activities — SMS &amp; WhatsApp Blast, AI Anchoring, Ideal Customer Intelligence, Sales Campaigns — and generate up to 10x revenue. Complete handovers are available for long-term growth.
+          For the first time ever, elite businesses in South Mumbai can acquire access before global expansion. This is the lowest pricing this asset will ever see. Prices increase 10X in the next 30 days.
         </motion.p>
 
         {/* ── Founder's Access ── */}
@@ -177,11 +177,11 @@ export function Pricing() {
           className="mb-4"
         >
           <div className="flex items-center gap-3 mb-2">
-            <span className="text-[11px] font-semibold text-[#F5A623] tracking-[2px] uppercase">Founder&apos;s Access</span>
+            <span className="text-[11px] font-semibold text-[#F5A623] tracking-[2px] uppercase">LAUNCH ACCESS</span>
             <div className="flex-1 h-px bg-[#E8E8E8]" />
           </div>
           <p className="text-sm text-[#888888] mb-6 max-w-2xl leading-relaxed">
-            Plans tested &amp; ready to deploy for all kinds of use cases with limited and targeted customer lookalike datapoints — without a broad mass audience. Complete Handovers are not included but can be discussed 1-on-1 with our dedicated relationship manager.
+            Entry-level audience packages for startups and growing businesses. Targeted lookalike datasets ready for immediate deployment.
           </p>
         </motion.div>
 
@@ -198,11 +198,11 @@ export function Pricing() {
           className="mb-4"
         >
           <div className="flex items-center gap-3 mb-2">
-            <span className="text-[11px] font-semibold text-[#F5A623] tracking-[2px] uppercase">VIP Access</span>
+            <span className="text-[11px] font-semibold text-[#F5A623] tracking-[2px] uppercase">ELITE ACCESS</span>
             <div className="flex-1 h-px bg-[#E8E8E8]" />
           </div>
           <p className="text-sm text-[#888888] mb-6 max-w-2xl leading-relaxed">
-            Exclusively designed for Luxury Real Estate, Luxury D2C brands, Jewellery, Cars, Clubs, Fine Dining, E-Commerce, Finance &amp; Loan DSAs, Digital Agencies, Premium Local Businesses, and any kind of startups. Exclusive Audience Set &amp; Complete File Handovers available at +25% premium (Negotiable).
+            Exclusively designed for luxury real estate, D2C brands, jewellery, high-ticket services, finance DSAs, and premium businesses that demand the highest conversion precision.
           </p>
         </motion.div>
 
@@ -218,7 +218,7 @@ export function Pricing() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center text-xs text-[#AAAAAA] mt-10"
         >
-          * All prices are exclusive of applicable taxes. Plans are subject to availability. Contact us for custom enterprise requirements.
+          * All prices are exclusive of taxes. South Mumbai launch pricing. After this window, pricing changes permanently and access becomes invite-only.
         </motion.p>
       </div>
     </section>

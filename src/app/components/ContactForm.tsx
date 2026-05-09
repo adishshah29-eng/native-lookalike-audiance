@@ -13,12 +13,12 @@ export function ContactForm() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-[11px] font-semibold text-[#888888] tracking-[2px] mb-3">GET IN TOUCH</p>
+            <p className="text-[11px] font-semibold text-[#888888] tracking-[2px] mb-3">ACQUIRE ACCESS</p>
             <h2 className="text-[36px] md:text-[48px] font-bold text-[#111111] mb-6" style={{ lineHeight: 1.2 }}>
-              Ready to Go Viral?
+              Ready To Own The Right Audience?
             </h2>
             <p className="text-[15px] text-[#555555] leading-relaxed mb-8">
-              Book a free strategy call with our team. We'll analyze your content and show you exactly how we can help you reach millions.
+              Book a free strategy call. We'll analyze your current ad targeting and show you exactly what your customer acquisition is missing.
             </p>
 
             <div className="space-y-4">
@@ -31,7 +31,7 @@ export function ContactForm() {
                 </div>
                 <div>
                   <p className="font-semibold text-[#111111]">WhatsApp</p>
-                  <p className="text-sm text-[#666666]">Chat with us instantly</p>
+                  <p className="text-sm text-[#666666]">Get your audience brief instantly</p>
                 </div>
               </a>
 
@@ -44,7 +44,7 @@ export function ContactForm() {
                 </div>
                 <div>
                   <p className="font-semibold text-[#111111]">Call Us</p>
-                  <p className="text-sm text-[#666666]">+1 (234) 567-890</p>
+                  <p className="text-sm text-[#666666]">+91 (XXX) XXX-XXXX</p>
                 </div>
               </a>
             </div>
@@ -82,7 +82,7 @@ export function ContactForm() {
                   name="email"
                   required
                   className="w-full px-4 py-3.5 bg-[#F7F7F7] border border-[#E0E0E0] rounded-[10px] text-[#111111] focus:border-[#111111] focus:outline-none transition-colors"
-                  placeholder="you@example.com"
+                  placeholder="you@company.com"
                 />
               </div>
 
@@ -96,7 +96,7 @@ export function ContactForm() {
                   required
                   rows={4}
                   className="w-full px-4 py-3.5 bg-[#F7F7F7] border border-[#E0E0E0] rounded-[10px] text-[#111111] focus:border-[#111111] focus:outline-none transition-colors resize-none"
-                  placeholder="Tell us about your project..."
+                  placeholder="Tell us about your business and current ad spend..."
                 ></textarea>
               </div>
 
@@ -104,7 +104,7 @@ export function ContactForm() {
                 type="submit"
                 className="w-full bg-[#111111] text-white py-3.5 px-6 rounded-full font-semibold text-sm hover:bg-black transition-colors"
               >
-                Send Message
+                Request Access
               </button>
             </form>
           </motion.div>

@@ -15,9 +15,10 @@ export function Navbar() {
       >
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="flex gap-1">
+            <div className="flex gap-1 items-center">
               <div className="w-2 h-2 rounded-full bg-black"></div>
               <div className="w-2 h-2 rounded-full bg-black"></div>
+              <span className="font-bold text-[#111111] ml-2 text-sm tracking-wide">LUXURY LOOK-ALIKES</span>
             </div>
           </div>
           <div className="flex items-center gap-3">

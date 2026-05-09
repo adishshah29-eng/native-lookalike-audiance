@@ -7,36 +7,36 @@ export function FAQ() {
 
   const faqs = [
     {
-      question: "How does the performance-based model work?",
-      answer: "We only succeed when you do. Our pricing is tied to the actual performance of your content, measured by views, engagement, and conversions."
+      question: "What exactly is a Luxury Look-Alike?",
+      answer: "A Luxury Look-Alike is a hyper-curated audience dataset built from real market intelligence, winning ad behavior, and elite consumer patterns — engineered specifically for your business category to maximize conversion."
     },
     {
-      question: "Do I need existing followers?",
-      answer: "No! That's the beauty of our distribution system. We can help you reach millions even if you're starting from zero."
+      question: "How is this different from Meta's built-in lookalike audiences?",
+      answer: "Meta's lookalikes are built from your existing pixel data — which is often limited, cold, or low quality. Ours are trained on 100s of crores in historical ad spends and millions of verified datapoints across industries."
     },
     {
-      question: "What kind of content works best?",
-      answer: "Educational, entertaining, and inspirational content tends to perform best. We'll work with you to identify your unique angle."
+      question: "How quickly will I see results?",
+      answer: "Most businesses see measurable improvement in CPL and ROAS within the first campaign cycle. The audience is deployment-ready from day one."
     },
     {
-      question: "How long until I see results?",
-      answer: "Most clients see significant traction within the first 30 days. Viral growth can happen even faster with the right content."
+      question: "What platforms can I use this on?",
+      answer: "Meta (Facebook & Instagram), Google, YouTube, and any platform that accepts custom audience uploads or lookalike generation."
     },
     {
-      question: "Can I cancel anytime?",
-      answer: "Yes, all our plans are month-to-month with no long-term contracts. We earn your business every single month."
+      question: "What's the performance guarantee?",
+      answer: "If your business performance doesn't improve after correctly implementing our Luxury Look-Alikes, we refund you. Simple."
     },
     {
-      question: "Do you work with all industries?",
-      answer: "We specialize in B2B, SaaS, real estate, and creator economy content, but we're open to discussing other industries."
+      question: "Why is South Mumbai launch pricing lower?",
+      answer: "This is the first public launch. Early businesses get the lowest pricing this asset will ever see. After this window, pricing increases 10X and access becomes invite-only."
     },
     {
-      question: "What platforms do you distribute to?",
-      answer: "We focus on the platforms that matter most: YouTube, Instagram, TikTok, LinkedIn, and Twitter/X."
+      question: "Do I need a large ad budget?",
+      answer: "No — in fact, smaller budgets benefit most. When you're running ads on the right people, every rupee works harder. Most clients recover the asset cost in the first week."
     },
     {
-      question: "How involved do I need to be?",
-      answer: "As much or as little as you want. We can handle everything from content creation to distribution, or just the distribution if you prefer."
+      question: "Is this a one-time purchase or subscription?",
+      answer: "Depending on your plan, you receive a dataset you own plus optional ongoing intelligence updates. Contact us to discuss the right structure for your business."
     },
   ];
 

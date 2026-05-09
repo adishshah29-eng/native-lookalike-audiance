@@ -17,9 +17,9 @@ export function Footer() {
               <div className="w-3 h-3 rounded-full bg-black"></div>
               <div className="w-3 h-3 rounded-full bg-black"></div>
             </div>
-            <span className="font-bold text-[#111111]">CLIPPING FARM</span>
+            <span className="font-bold text-[#111111] tracking-wide">LUXURY LOOK-ALIKES</span>
           </div>
-          <p className="text-sm text-[#666666]">Making content go viral since 2020</p>
+          <p className="text-sm text-[#666666]">The World's First Luxury Audience Asset.</p>
         </div>
 
         {/* Links Grid */}
@@ -27,9 +27,9 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-[#111111] mb-4 text-sm">Services</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-[#666666] hover:text-[#111111]">Content Creation</a></li>
-              <li><a href="#" className="text-sm text-[#666666] hover:text-[#111111]">Distribution</a></li>
-              <li><a href="#" className="text-sm text-[#666666] hover:text-[#111111]">Analytics</a></li>
+              <li><a href="#" className="text-sm text-[#666666] hover:text-[#111111]">Audience Intelligence</a></li>
+              <li><a href="#" className="text-sm text-[#666666] hover:text-[#111111]">Lookalike Precision</a></li>
+              <li><a href="#" className="text-sm text-[#666666] hover:text-[#111111]">Performance Training</a></li>
             </ul>
           </div>
 
@@ -54,7 +54,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-6 border-t border-[#DDDDDD] flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-[#444444] tracking-[2px] font-semibold">CLIPPING FARM</p>
+          <p className="text-xs text-[#444444] tracking-[2px] font-semibold">LUXURY LOOK-ALIKES</p>
 
           <div className="flex items-center gap-4">
             <a href="#" className="text-[#444444] hover:text-[#111111] transition-colors">

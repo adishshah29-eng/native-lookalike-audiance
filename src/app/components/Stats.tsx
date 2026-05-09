@@ -2,9 +2,9 @@ import { motion } from 'motion/react';
 
 export function Stats() {
   const stats = [
-    { number: '50M+', label: 'TOTAL VIEWS' },
-    { number: '100+', label: 'ACTIVE CAMPAIGNS' },
-    { number: '95%', label: 'CLIENT RETENTION' },
+    { number: '₹100Cr+', label: 'AD SPEND TRAINED ON' },
+    { number: '10M+', label: 'AUDIENCE DATAPOINTS' },
+    { number: '100%', label: 'PERFORMANCE COMMITMENT' },
   ];
 
   return (
