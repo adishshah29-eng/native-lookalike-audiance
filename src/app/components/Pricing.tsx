@@ -101,24 +101,30 @@ export function Pricing() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: delay + index * 0.1 }}
-      className={`bg-white rounded-2xl p-6 flex flex-col ${
+      className={`relative rounded-3xl p-6 md:p-8 flex flex-col flex-shrink-0 w-[85vw] md:w-auto snap-center transition-all duration-500 hover:-translate-y-2 ${
         plan.highlighted
-          ? 'border-2 border-[#111111] shadow-lg'
-          : 'border border-[#E8E8E8]'
+          ? 'bg-gradient-to-b from-[#111] to-[#000] text-white shadow-2xl shadow-black/40 border border-white/10'
+          : 'bg-white text-[#111] shadow-xl shadow-black/5 border border-gray-100'
       }`}
     >
-      <h3 className="text-xl font-bold text-[#111111] mb-1">{plan.name}</h3>
-      <p className="text-xs text-[#888888] mb-4 leading-snug">{plan.tag}</p>
-      <div className="mb-6">
-        <span className="text-3xl font-bold text-[#111111]">{plan.price}</span>
-        <span className="text-[#888888] text-sm ml-1">*</span>
+      <div className={`mb-5 self-start px-3 py-1.5 text-[9px] sm:text-[10px] font-bold tracking-widest uppercase rounded-full ${
+        plan.highlighted ? 'bg-[#FF2222] text-white' : 'bg-gray-100 text-[#555]'
+      }`}>
+        Open for the #1 time, only for businesses in bombay
       </div>
 
-      <ul className="space-y-3 mb-8 flex-1">
+      <h3 className={`text-2xl font-black mb-1 ${plan.highlighted ? 'text-white' : 'text-[#111]'}`}>{plan.name}</h3>
+      <p className={`text-xs mb-6 leading-snug ${plan.highlighted ? 'text-white/60' : 'text-[#888]'}`}>{plan.tag}</p>
+      
+      <div className="mb-8">
+        <span className={`text-4xl font-black tracking-tight ${plan.highlighted ? 'text-white' : 'text-[#111]'}`}>{plan.price}</span>
+      </div>
+
+      <ul className="space-y-4 mb-10 flex-1">
         {plan.features.map((feature, idx) => (
-          <li key={idx} className="flex items-start gap-2">
-            <Check className="w-4 h-4 text-[#F5A623] flex-shrink-0 mt-0.5" />
-            <span className="text-sm text-[#555555]">{feature}</span>
+          <li key={idx} className="flex items-start gap-3">
+            <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.highlighted ? 'text-[#FF2222]' : 'text-[#111]'}`} />
+            <span className={`text-sm font-medium ${plan.highlighted ? 'text-white/80' : 'text-[#444]'}`}>{feature}</span>
           </li>
         ))}
       </ul>
@@ -130,10 +136,10 @@ export function Pricing() {
           );
           window.open(`https://wa.me/${CONTACT.whatsapp}?text=${msg}`, '_blank');
         }}
-        className={`w-full py-3 px-6 rounded-full font-semibold text-sm transition-colors ${
+        className={`w-full py-4 px-6 rounded-full font-bold text-sm tracking-wide transition-all duration-300 ${
           plan.highlighted
-            ? 'bg-[#111111] text-white hover:bg-black'
-            : 'bg-white text-[#111111] border border-[#111111] hover:bg-gray-50'
+            ? 'bg-white text-black hover:bg-gray-200'
+            : 'bg-[#111] text-white hover:bg-black'
         }`}
       >
         Acquire Now
@@ -160,20 +166,11 @@ export function Pricing() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-center text-[36px] md:text-[48px] font-bold text-[#111111] mb-4"
+          className="text-center text-[36px] md:text-[48px] font-bold text-[#111111] mb-16"
           style={{ lineHeight: 1.2 }}
         >
-          South Mumbai Launch Pricing
+          Select Your Access
         </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-center text-sm text-[#666666] max-w-2xl mx-auto mb-16 leading-relaxed"
-        >
-          For the first time ever, elite businesses in South Mumbai can acquire access before global expansion. This is the lowest pricing this asset will ever see. Prices increase 10X in the next 30 days.
-        </motion.p>
 
         {/* ── Founder's Access ── */}
         <motion.div
@@ -192,7 +189,7 @@ export function Pricing() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div className="flex overflow-x-auto md:grid md:grid-cols-3 gap-6 mb-16 pb-8 -mx-6 px-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {founderPlans.map((plan, index) => renderCard(plan, index, 0.2))}
         </div>
 
@@ -213,7 +210,7 @@ export function Pricing() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="flex overflow-x-auto md:grid md:grid-cols-3 gap-6 pb-8 -mx-6 px-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {vipPlans.map((plan, index) => renderCard(plan, index, 0.2))}
         </div>
 
@@ -223,9 +220,9 @@ export function Pricing() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-center text-xs text-[#AAAAAA] mt-10"
+          className="text-center text-xs text-[#AAAAAA] mt-6"
         >
-          * All prices are exclusive of taxes. South Mumbai launch pricing. After this window, pricing changes permanently and access becomes invite-only.
+          * All prices are exclusive of taxes. After this window, pricing changes permanently and access becomes invite-only.
         </motion.p>
       </div>
     </section>

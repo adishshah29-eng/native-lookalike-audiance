@@ -70,7 +70,7 @@ export function Hero() {
           }}
           className="w-full sm:w-auto bg-white text-black font-semibold text-sm md:text-base px-10 py-4 rounded-full tracking-wide hover:bg-gray-100 transition-all duration-200 mt-2"
         >
-          Acquire Your Look-Alikes
+          Meet Your Private Service
         </motion.button>
       </motion.div>
     </AuroraBackground>
