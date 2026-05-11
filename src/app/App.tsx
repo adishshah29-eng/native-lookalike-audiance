@@ -3,6 +3,7 @@ import { Hero } from './components/Hero';
 import { Partnerships } from './components/Partnerships';
 import { Stats } from './components/Stats';
 import { WhatWeDo } from './components/WhatWeDo';
+import { HowToAcquire } from './components/HowToAcquire';
 import { Features } from './components/Features';
 import { Pricing } from './components/Pricing';
 import { Testimonials } from './components/Testimonials';
@@ -18,6 +19,7 @@ export default function App() {
       <Partnerships />
       <Stats />
       <WhatWeDo />
+      <HowToAcquire />
       <Features />
       <Pricing />
       <Testimonials />
