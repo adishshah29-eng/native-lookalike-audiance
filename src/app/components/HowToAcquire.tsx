@@ -24,8 +24,8 @@ const steps = [
 
 export function HowToAcquire() {
   return (
-    <section style={{ background: '#F0F2F5', padding: '80px 24px' }}>
-      <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+    <section className="py-20 px-6" style={{ background: '#F0F2F5' }}>
+      <div className="max-w-6xl mx-auto">
 
         {/* Heading block */}
         <motion.div
@@ -33,7 +33,7 @@ export function HowToAcquire() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          style={{ textAlign: 'center', marginBottom: '56px' }}
+          className="text-center mb-14"
         >
           <p style={{
             fontSize: '11px',
@@ -64,23 +64,12 @@ export function HowToAcquire() {
           </p>
         </motion.div>
 
-        {/* Cards + Arrows row */}
-        <div style={{
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          gap: '0',
-          flexWrap: 'wrap',
-        }}>
+        {/* Cards row — col on mobile, row on desktop */}
+        <div className="flex flex-col md:flex-row md:items-stretch gap-5 md:gap-0">
           {steps.map((step, index) => (
             <div
               key={step.number}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                flex: '1 1 220px',
-                minWidth: '0',
-              }}
+              className="flex md:flex-1 md:items-center md:min-w-0"
             >
               {/* Card */}
               <motion.div
@@ -88,17 +77,17 @@ export function HowToAcquire() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
+                className="w-full"
                 style={{
-                  flex: 1,
                   background: '#FFFFFF',
                   border: '1.5px solid #E2E5EB',
                   borderRadius: '20px',
-                  padding: '32px 28px',
+                  padding: '28px 24px',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'flex-start',
                   boxShadow: '0 4px 24px rgba(0, 0, 0, 0.08)',
-                  minHeight: '220px',
+                  minHeight: '200px',
                 }}
               >
                 {/* Number circle */}
@@ -113,7 +102,7 @@ export function HowToAcquire() {
                   color: '#fff',
                   fontWeight: 900,
                   fontSize: '17px',
-                  marginBottom: '20px',
+                  marginBottom: '18px',
                   flexShrink: 0,
                 }}>
                   {step.number}
@@ -125,7 +114,7 @@ export function HowToAcquire() {
                   fontWeight: 800,
                   color: '#111',
                   lineHeight: 1.35,
-                  marginBottom: '12px',
+                  marginBottom: '10px',
                 }}>
                   {step.title}
                 </h3>
@@ -141,15 +130,9 @@ export function HowToAcquire() {
                 </p>
               </motion.div>
 
-              {/* Arrow between cards */}
+              {/* Arrow between cards — desktop only */}
               {index < steps.length - 1 && (
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  padding: '0 14px',
-                  flexShrink: 0,
-                }}>
+                <div className="hidden md:flex items-center justify-center flex-shrink-0 px-3">
                   <ArrowRight style={{ color: '#C0C5CE', width: '22px', height: '22px' }} />
                 </div>
               )}
@@ -163,7 +146,7 @@ export function HowToAcquire() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          style={{ marginTop: '56px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+          className="mt-14 flex flex-col items-center"
         >
           <button
             style={{
@@ -175,10 +158,7 @@ export function HowToAcquire() {
               fontSize: '15px',
               border: 'none',
               cursor: 'pointer',
-              transition: 'background 0.2s',
             }}
-            onMouseOver={e => (e.currentTarget.style.background = '#000')}
-            onMouseOut={e => (e.currentTarget.style.background = '#111')}
             onClick={() =>
               document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
             }
