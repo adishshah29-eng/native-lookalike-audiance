@@ -20,7 +20,6 @@ export default function App() {
       <Stats />
       <WhatWeDo />
       <HowToAcquire />
-      <Features />
       <Pricing />
       <Testimonials />
       <ContactForm />

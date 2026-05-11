@@ -82,7 +82,7 @@ export function WhatWeDo() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.5 }}
             className="text-[36px] md:text-[48px] font-bold text-[#111111] mb-6" style={{ lineHeight: 1.2 }}>
-            Three Intelligence Layers
+            Trained on performance. Not theory.
           </motion.h3>
 
           {/* Tab Pills */}
