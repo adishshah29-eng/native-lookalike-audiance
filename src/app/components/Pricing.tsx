@@ -1,4 +1,4 @@
-import { Check } from 'lucide-react';
+import { Check, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
 import { CONTACT } from '../config';
 
@@ -101,48 +101,102 @@ export function Pricing() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: delay + index * 0.1 }}
-      className={`relative rounded-3xl p-6 md:p-8 flex flex-col flex-shrink-0 w-[85vw] md:w-auto snap-center transition-all duration-500 hover:-translate-y-2 ${
+      className={`relative rounded-3xl flex flex-col flex-shrink-0 w-[85vw] md:w-auto snap-center transition-all duration-300 hover:-translate-y-1 overflow-hidden bg-white ${
         plan.highlighted
-          ? 'bg-[#F5A623] text-[#111] shadow-2xl shadow-[#F5A623]/20 border border-[#F5A623]'
-          : 'bg-[#1A1A1A] text-white shadow-xl shadow-black/30 border border-white/8'
+          ? 'shadow-[0_12px_40px_-8px_rgba(245,166,35,0.25)] border-2 border-[#F5A623]'
+          : 'shadow-[0_8px_30px_-4px_rgba(0,0,0,0.04)] border border-[#EBEBEB]'
       }`}
     >
-      <h3 className={`text-2xl font-black mb-1 ${plan.highlighted ? 'text-[#111]' : 'text-white'}`}>{plan.name}</h3>
-      <p className={`text-xs mb-6 leading-snug ${plan.highlighted ? 'text-[#111]/60' : 'text-white/50'}`}>{plan.tag}</p>
+      {/* Top accent bar for highlighted */}
+      {plan.highlighted && (
+        <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#F5A623]" />
+      )}
 
-      <div className="mb-8">
-        <span className={`text-4xl font-black tracking-tight ${plan.highlighted ? 'text-[#111]' : 'text-white'}`}>{plan.price}</span>
+      {/* Most Popular badge */}
+      {plan.highlighted && (
+        <div className="absolute top-5 right-5 flex items-center gap-1.5 bg-[#F5A623] text-white text-[10px] font-black tracking-[1.5px] uppercase px-3 py-1.5 rounded-full">
+          <Sparkles className="w-3 h-3" />
+          Most Popular
+        </div>
+      )}
+
+      <div className="p-6 md:p-8 flex flex-col flex-1">
+        <h3 className="text-xl font-black mb-1 pr-24 text-[#444444]">
+          {plan.name}
+        </h3>
+        <p className="text-xs mb-6 leading-snug text-[#888888]">
+          {plan.tag}
+        </p>
+
+        <div className="mb-6">
+          <span
+            className="text-4xl font-black tracking-tight"
+            style={{ color: plan.highlighted ? '#F5A623' : '#444444' }}
+          >
+            {plan.price}
+          </span>
+        </div>
+
+        {/* Divider */}
+        <div
+          className="mb-6 h-px"
+          style={{
+            background: plan.highlighted ? 'rgba(245,166,35,0.2)' : '#EBEBEB',
+          }}
+        />
+
+        <ul className="space-y-3 mb-8 flex-1">
+          {plan.features.map((feature, idx) => (
+            <li key={idx} className="flex items-start gap-3">
+              <div
+                className="w-5 h-5 rounded-full flex-shrink-0 mt-0.5 flex items-center justify-center"
+                style={{
+                  background: plan.highlighted
+                    ? 'rgba(245,166,35,0.15)'
+                    : 'rgba(245,166,35,0.12)',
+                }}
+              >
+                <Check className="w-3 h-3 text-[#F5A623]" />
+              </div>
+              <span
+                className="text-sm font-medium text-[#555555]"
+              >
+                {feature}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        <button
+          onClick={() => {
+            const msg = encodeURIComponent(
+              `Hi, I'm interested in the ${plan.name} (${plan.price}). Please share more details.`
+            );
+            window.open(`https://wa.me/${CONTACT.whatsapp}?text=${msg}`, '_blank');
+          }}
+          className="w-full py-4 px-6 rounded-full font-bold text-sm tracking-wide transition-all duration-300"
+          style={{
+            background: plan.highlighted ? '#F5A623' : '#FFFFFF',
+            color: plan.highlighted ? '#FFFFFF' : '#F5A623',
+            border: `1px solid #F5A623`,
+          }}
+          onMouseEnter={e => {
+            (e.currentTarget as HTMLButtonElement).style.background = plan.highlighted ? '#e6961f' : '#F5A623';
+            (e.currentTarget as HTMLButtonElement).style.color = '#FFFFFF';
+          }}
+          onMouseLeave={e => {
+            (e.currentTarget as HTMLButtonElement).style.background = plan.highlighted ? '#F5A623' : '#FFFFFF';
+            (e.currentTarget as HTMLButtonElement).style.color = plan.highlighted ? '#FFFFFF' : '#F5A623';
+          }}
+        >
+          Acquire Now
+        </button>
       </div>
-
-      <ul className="space-y-4 mb-10 flex-1">
-        {plan.features.map((feature, idx) => (
-          <li key={idx} className="flex items-start gap-3">
-            <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.highlighted ? 'text-[#111]' : 'text-[#F5A623]'}`} />
-            <span className={`text-sm font-medium ${plan.highlighted ? 'text-[#111]/80' : 'text-white/75'}`}>{feature}</span>
-          </li>
-        ))}
-      </ul>
-
-      <button
-        onClick={() => {
-          const msg = encodeURIComponent(
-            `Hi, I'm interested in the ${plan.name} (${plan.price}). Please share more details.`
-          );
-          window.open(`https://wa.me/${CONTACT.whatsapp}?text=${msg}`, '_blank');
-        }}
-        className={`w-full py-4 px-6 rounded-full font-bold text-sm tracking-wide transition-all duration-300 ${
-          plan.highlighted
-            ? 'bg-[#111] text-white hover:bg-black'
-            : 'bg-[#F5A623] text-[#111] hover:bg-[#e6961f]'
-        }`}
-      >
-        Acquire Now
-      </button>
     </motion.div>
   );
 
   return (
-    <section id="pricing" className="bg-[#0D0D0D] py-16 px-6">
+    <section id="pricing" className="bg-[#F7F7F7] py-16 px-6">
       <div className="max-w-6xl mx-auto">
 
         {/* Section Header */}
@@ -151,60 +205,64 @@ export function Pricing() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center text-[11px] font-semibold text-[#F5A623] tracking-[2px] mb-3"
+          className="text-center text-[11px] font-semibold text-[#888888] tracking-[2px] mb-3 uppercase"
         >
-          PRICING
+          Pricing
         </motion.p>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-center text-[36px] md:text-[48px] font-bold text-white mb-16"
+          className="text-center text-[36px] md:text-[48px] font-bold text-[#444444] mb-16"
           style={{ lineHeight: 1.2 }}
         >
           Open for the #1 time, only for businesses in bombay
         </motion.h2>
 
-        {/* ── Founder's Access ── */}
+        {/* ── Launch Access ── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mb-4"
+          className="mb-5"
         >
           <div className="flex items-center gap-3 mb-2">
-            <span className="text-[11px] font-semibold text-[#F5A623] tracking-[2px] uppercase">LAUNCH ACCESS</span>
-            <div className="flex-1 h-px bg-white/10" />
+            <span className="text-[11px] font-semibold text-[#F5A623] tracking-[2px] uppercase">
+              Launch Access
+            </span>
+            <div className="flex-1 h-px bg-[#E8E8E8]" />
           </div>
-          <p className="text-sm text-white/50 mb-6 max-w-2xl leading-relaxed">
+          <p className="text-sm text-[#888888] mb-6 max-w-2xl leading-relaxed">
             Entry-level audience packages for startups and growing businesses. Targeted lookalike datasets ready for immediate deployment.
           </p>
         </motion.div>
 
-        <div className="flex overflow-x-auto md:grid md:grid-cols-3 gap-6 mb-16 pb-8 -mx-6 px-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <div className="flex overflow-x-auto md:grid md:grid-cols-3 gap-5 mb-16 pb-8 -mx-6 px-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {founderPlans.map((plan, index) => renderCard(plan, index, 0.2))}
         </div>
 
-        {/* ── VIP Access ── */}
+        {/* ── Elite Access ── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mb-4"
+          className="mb-5"
         >
           <div className="flex items-center gap-3 mb-2">
-            <span className="text-[11px] font-semibold text-[#F5A623] tracking-[2px] uppercase">ELITE ACCESS</span>
-            <div className="flex-1 h-px bg-white/10" />
+            <span className="text-[11px] font-semibold text-[#F5A623] tracking-[2px] uppercase">
+              Elite Access
+            </span>
+            <div className="flex-1 h-px bg-[#E8E8E8]" />
           </div>
-          <p className="text-sm text-white/50 mb-6 max-w-2xl leading-relaxed">
+          <p className="text-sm text-[#888888] mb-6 max-w-2xl leading-relaxed">
             Exclusively designed for luxury real estate, D2C brands, jewellery, high-ticket services, finance DSAs, and premium businesses that demand the highest conversion precision.
           </p>
         </motion.div>
 
-        <div className="flex overflow-x-auto md:grid md:grid-cols-3 gap-6 pb-8 -mx-6 px-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <div className="flex overflow-x-auto md:grid md:grid-cols-3 gap-5 pb-8 -mx-6 px-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {vipPlans.map((plan, index) => renderCard(plan, index, 0.2))}
         </div>
 
@@ -214,7 +272,7 @@ export function Pricing() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-center text-xs text-white/30 mt-6"
+          className="text-center text-xs text-[#AAAAAA] mt-6"
         >
           * All prices are exclusive of taxes. After this window, pricing changes permanently and access becomes invite-only.
         </motion.p>
