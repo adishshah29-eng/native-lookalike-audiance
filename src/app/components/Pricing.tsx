@@ -169,7 +169,7 @@ export function Pricing() {
           className="text-center text-[36px] md:text-[48px] font-bold text-[#111111] mb-16"
           style={{ lineHeight: 1.2 }}
         >
-          Select Your Access
+          Open for the #1 time, only for businesses in bombay
         </motion.h2>
 
         {/* ── Founder's Access ── */}
