@@ -103,28 +103,22 @@ export function Pricing() {
       transition={{ duration: 0.5, delay: delay + index * 0.1 }}
       className={`relative rounded-3xl p-6 md:p-8 flex flex-col flex-shrink-0 w-[85vw] md:w-auto snap-center transition-all duration-500 hover:-translate-y-2 ${
         plan.highlighted
-          ? 'bg-gradient-to-b from-[#111] to-[#000] text-white shadow-2xl shadow-black/40 border border-white/10'
-          : 'bg-white text-[#111] shadow-xl shadow-black/5 border border-gray-100'
+          ? 'bg-[#F5A623] text-[#111] shadow-2xl shadow-[#F5A623]/20 border border-[#F5A623]'
+          : 'bg-[#1A1A1A] text-white shadow-xl shadow-black/30 border border-white/8'
       }`}
     >
-      <div className={`mb-5 self-start px-3 py-1.5 text-[9px] sm:text-[10px] font-bold tracking-widest uppercase rounded-full ${
-        plan.highlighted ? 'bg-[#FF2222] text-white' : 'bg-gray-100 text-[#555]'
-      }`}>
-        Open for the #1 time, only for businesses in bombay
-      </div>
+      <h3 className={`text-2xl font-black mb-1 ${plan.highlighted ? 'text-[#111]' : 'text-white'}`}>{plan.name}</h3>
+      <p className={`text-xs mb-6 leading-snug ${plan.highlighted ? 'text-[#111]/60' : 'text-white/50'}`}>{plan.tag}</p>
 
-      <h3 className={`text-2xl font-black mb-1 ${plan.highlighted ? 'text-white' : 'text-[#111]'}`}>{plan.name}</h3>
-      <p className={`text-xs mb-6 leading-snug ${plan.highlighted ? 'text-white/60' : 'text-[#888]'}`}>{plan.tag}</p>
-      
       <div className="mb-8">
-        <span className={`text-4xl font-black tracking-tight ${plan.highlighted ? 'text-white' : 'text-[#111]'}`}>{plan.price}</span>
+        <span className={`text-4xl font-black tracking-tight ${plan.highlighted ? 'text-[#111]' : 'text-white'}`}>{plan.price}</span>
       </div>
 
       <ul className="space-y-4 mb-10 flex-1">
         {plan.features.map((feature, idx) => (
           <li key={idx} className="flex items-start gap-3">
-            <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.highlighted ? 'text-[#FF2222]' : 'text-[#111]'}`} />
-            <span className={`text-sm font-medium ${plan.highlighted ? 'text-white/80' : 'text-[#444]'}`}>{feature}</span>
+            <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.highlighted ? 'text-[#111]' : 'text-[#F5A623]'}`} />
+            <span className={`text-sm font-medium ${plan.highlighted ? 'text-[#111]/80' : 'text-white/75'}`}>{feature}</span>
           </li>
         ))}
       </ul>
@@ -138,8 +132,8 @@ export function Pricing() {
         }}
         className={`w-full py-4 px-6 rounded-full font-bold text-sm tracking-wide transition-all duration-300 ${
           plan.highlighted
-            ? 'bg-white text-black hover:bg-gray-200'
-            : 'bg-[#111] text-white hover:bg-black'
+            ? 'bg-[#111] text-white hover:bg-black'
+            : 'bg-[#F5A623] text-[#111] hover:bg-[#e6961f]'
         }`}
       >
         Acquire Now
@@ -148,7 +142,7 @@ export function Pricing() {
   );
 
   return (
-    <section id="pricing" className="bg-white py-16 px-6">
+    <section id="pricing" className="bg-[#0D0D0D] py-16 px-6">
       <div className="max-w-6xl mx-auto">
 
         {/* Section Header */}
@@ -157,7 +151,7 @@ export function Pricing() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center text-[11px] font-semibold text-[#888888] tracking-[2px] mb-3"
+          className="text-center text-[11px] font-semibold text-[#F5A623] tracking-[2px] mb-3"
         >
           PRICING
         </motion.p>
@@ -166,7 +160,7 @@ export function Pricing() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-center text-[36px] md:text-[48px] font-bold text-[#111111] mb-16"
+          className="text-center text-[36px] md:text-[48px] font-bold text-white mb-16"
           style={{ lineHeight: 1.2 }}
         >
           Open for the #1 time, only for businesses in bombay
@@ -182,9 +176,9 @@ export function Pricing() {
         >
           <div className="flex items-center gap-3 mb-2">
             <span className="text-[11px] font-semibold text-[#F5A623] tracking-[2px] uppercase">LAUNCH ACCESS</span>
-            <div className="flex-1 h-px bg-[#E8E8E8]" />
+            <div className="flex-1 h-px bg-white/10" />
           </div>
-          <p className="text-sm text-[#888888] mb-6 max-w-2xl leading-relaxed">
+          <p className="text-sm text-white/50 mb-6 max-w-2xl leading-relaxed">
             Entry-level audience packages for startups and growing businesses. Targeted lookalike datasets ready for immediate deployment.
           </p>
         </motion.div>
@@ -203,9 +197,9 @@ export function Pricing() {
         >
           <div className="flex items-center gap-3 mb-2">
             <span className="text-[11px] font-semibold text-[#F5A623] tracking-[2px] uppercase">ELITE ACCESS</span>
-            <div className="flex-1 h-px bg-[#E8E8E8]" />
+            <div className="flex-1 h-px bg-white/10" />
           </div>
-          <p className="text-sm text-[#888888] mb-6 max-w-2xl leading-relaxed">
+          <p className="text-sm text-white/50 mb-6 max-w-2xl leading-relaxed">
             Exclusively designed for luxury real estate, D2C brands, jewellery, high-ticket services, finance DSAs, and premium businesses that demand the highest conversion precision.
           </p>
         </motion.div>
@@ -220,7 +214,7 @@ export function Pricing() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-center text-xs text-[#AAAAAA] mt-6"
+          className="text-center text-xs text-white/30 mt-6"
         >
           * All prices are exclusive of taxes. After this window, pricing changes permanently and access becomes invite-only.
         </motion.p>
