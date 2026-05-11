@@ -24,7 +24,7 @@ const steps = [
 
 export function HowToAcquire() {
   return (
-    <section className="py-20" style={{ background: '#F0F2F5' }}>
+    <section className="py-20" style={{ background: '#FAFAFA' }}>
       <div className="max-w-6xl mx-auto">
 
         {/* Heading block */}
@@ -71,7 +71,7 @@ export function HowToAcquire() {
         <div
           className={[
             /* Mobile: horizontal scroll, no wrap, snap */
-            'flex flex-row flex-nowrap',
+            'flex flex-row flex-nowrap overflow-y-hidden',
             'overflow-x-auto md:overflow-x-visible',
             'snap-x snap-mandatory',
             /* hide scrollbar */
@@ -97,20 +97,20 @@ export function HowToAcquire() {
             >
               {/* Card */}
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 className="w-full"
                 style={{
                   background: '#FFFFFF',
-                  border: '1.5px solid #E2E5EB',
-                  borderRadius: '20px',
-                  padding: '28px 24px',
+                  border: '1px solid #EDEDED',
+                  borderRadius: '24px',
+                  padding: '32px 28px',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'flex-start',
-                  boxShadow: '0 4px 24px rgba(0, 0, 0, 0.08)',
+                  boxShadow: '0 10px 30px -10px rgba(0, 0, 0, 0.05)',
                   minHeight: '210px',
                 }}
               >
