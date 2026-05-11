@@ -24,7 +24,7 @@ const steps = [
 
 export function HowToAcquire() {
   return (
-    <section className="py-20 px-6" style={{ background: '#F0F2F5' }}>
+    <section className="py-20" style={{ background: '#F0F2F5' }}>
       <div className="max-w-6xl mx-auto">
 
         {/* Heading block */}
@@ -33,7 +33,7 @@ export function HowToAcquire() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-14"
+          className="text-center mb-14 px-6"
         >
           <p style={{
             fontSize: '11px',
@@ -64,12 +64,36 @@ export function HowToAcquire() {
           </p>
         </motion.div>
 
-        {/* Cards row — col on mobile, row on desktop */}
-        <div className="flex flex-col md:flex-row md:items-stretch gap-5 md:gap-0">
+        {/*
+          Mobile: horizontal scroll with peek of next card
+          Desktop: normal flex row
+        */}
+        <div
+          className={[
+            /* Mobile: horizontal scroll, no wrap, snap */
+            'flex flex-row flex-nowrap',
+            'overflow-x-auto md:overflow-x-visible',
+            'snap-x snap-mandatory',
+            /* hide scrollbar */
+            '[&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]',
+            /* Desktop: reset to normal row */
+            'md:flex-wrap md:items-stretch',
+            /* Padding so peek of next card shows on right on mobile */
+            'px-6 md:px-6',
+            'gap-4 md:gap-0',
+          ].join(' ')}
+        >
           {steps.map((step, index) => (
             <div
               key={step.number}
-              className="flex md:flex-1 md:items-center md:min-w-0"
+              className={[
+                /* Mobile: fixed width so next card peeks */
+                'flex-shrink-0 w-[78vw]',
+                'snap-center',
+                /* Desktop: flex-1 equal columns */
+                'md:flex-shrink md:flex-1 md:w-auto',
+                'flex md:items-center',
+              ].join(' ')}
             >
               {/* Card */}
               <motion.div
@@ -87,7 +111,7 @@ export function HowToAcquire() {
                   flexDirection: 'column',
                   alignItems: 'flex-start',
                   boxShadow: '0 4px 24px rgba(0, 0, 0, 0.08)',
-                  minHeight: '200px',
+                  minHeight: '210px',
                 }}
               >
                 {/* Number circle */}
@@ -146,7 +170,7 @@ export function HowToAcquire() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-14 flex flex-col items-center"
+          className="mt-14 flex flex-col items-center px-6"
         >
           <button
             style={{
